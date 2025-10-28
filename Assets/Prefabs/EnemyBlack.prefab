@@ -334,8 +334,7 @@ GameObject:
   - component: {fileID: 4420059138202408721}
   - component: {fileID: -6207493236357105720}
   - component: {fileID: 116758146641522214}
-  - component: {fileID: 8422635338300633033}
-  - component: {fileID: 1246134158681164353}
+  - component: {fileID: 2543193123890240876}
   m_Layer: 0
   m_Name: EnemyBlack
   m_TagString: Untagged
@@ -473,7 +472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9f9b5311eaa014199a670faa12f17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8422635338300633033
+  _follover: {fileID: 2543193123890240876}
+--- !u!114 &2543193123890240876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,24 +482,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7606682559158534922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696bd3073f84bb549872162ba110ddf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  speedCoefficient: 1000
---- !u!114 &1246134158681164353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7606682559158534922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e7e30c6f5d19c8449922687cae975d5, type: 3}
+  m_Script: {fileID: 11500000, guid: ee6bd22ca87e8c4408199652795d3bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
+  _speed: 17
 --- !u!1 &9192389623727082522
 GameObject:
   m_ObjectHideFlags: 0

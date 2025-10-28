@@ -240,13 +240,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 176385848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36116b585cb7a14786708c25e48517c, type: 3}
+  m_Script: {fileID: 11500000, guid: f6496d8957834de4681d8babe712120f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerNumber: 1
   _enemy: {fileID: 116758146641522214, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
   _target: {fileID: 1849985745}
-  _spawnerScreamer: {fileID: 1124994512}
 --- !u!1 &316878007
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,13 +362,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 316878007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36116b585cb7a14786708c25e48517c, type: 3}
+  m_Script: {fileID: 11500000, guid: f6496d8957834de4681d8babe712120f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerNumber: 2
   _enemy: {fileID: 116758146641522214, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
   _target: {fileID: 599146259}
-  _spawnerScreamer: {fileID: 1124994512}
 --- !u!1 &344756954
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +423,7 @@ MonoBehaviour:
   _waypoints:
   - {fileID: 1762631203}
   - {fileID: 1021895959}
-  speed: 10
+  speed: 15
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +557,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116758146641522214, guid: 70a44300892b989449b23e95c074fe27, type: 3}
+      propertyPath: _observer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1500730475459796981, guid: 70a44300892b989449b23e95c074fe27, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -624,6 +624,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9156181940775743195, guid: 70a44300892b989449b23e95c074fe27, type: 3}
     - {fileID: 582022365281256802, guid: 70a44300892b989449b23e95c074fe27, type: 3}
+    - {fileID: 116758146641522214, guid: 70a44300892b989449b23e95c074fe27, type: 3}
+    - {fileID: 5366307558915553931, guid: 70a44300892b989449b23e95c074fe27, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -639,6 +641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116758146641522214, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
+      propertyPath: _observer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1500730475459796981, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -711,6 +717,8 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 6989587959267009337, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
     - {fileID: 8607567360494652729, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
+    - {fileID: 116758146641522214, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
+    - {fileID: 1973610595072309509, guid: 3ea69930883ce0347918b969a0c17f4b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -958,19 +966,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1050989953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36116b585cb7a14786708c25e48517c, type: 3}
+  m_Script: {fileID: 11500000, guid: f6496d8957834de4681d8babe712120f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerNumber: 3
   _enemy: {fileID: 116758146641522214, guid: 70a44300892b989449b23e95c074fe27, type: 3}
   _target: {fileID: 2052927214}
-  _spawnerScreamer: {fileID: 1124994512}
 --- !u!1 &1124994506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5613338189221663750, guid: 3c815b682a442f5408b18028da6921ed, type: 3}
   m_PrefabInstance: {fileID: 1697923669}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1124994512
+--- !u!114 &1124994517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -979,11 +985,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124994506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64c0e1c39ee60943bef4ab7f36f41cf, type: 3}
+  m_Script: {fileID: 11500000, guid: f36116b585cb7a14786708c25e48517c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _delay: 2
-  _spawnersCount: 3
+  _spawnPoints:
+  - {fileID: 176385853}
+  - {fileID: 1050989958}
+  - {fileID: 316878012}
 --- !u!1 &1286561801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,7 +1235,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5613338189221663750, guid: 3c815b682a442f5408b18028da6921ed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1124994512}
+      addedObject: {fileID: 1124994517}
   m_SourcePrefab: {fileID: 100100000, guid: 3c815b682a442f5408b18028da6921ed, type: 3}
 --- !u!1 &1762631202
 GameObject:
@@ -1293,6 +1302,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116758146641522214, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
+      propertyPath: _observer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1500730475459796981, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -1357,6 +1370,8 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 8422635338300633033, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
     - {fileID: 1246134158681164353, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
+    - {fileID: 116758146641522214, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
+    - {fileID: 2543193123890240876, guid: 449e06a7a83634a4b954c86d372ed863, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1389,7 +1404,7 @@ MonoBehaviour:
   _waypoints:
   - {fileID: 344756955}
   - {fileID: 1286561802}
-  speed: 10
+  speed: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

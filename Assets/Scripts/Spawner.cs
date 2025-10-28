@@ -1,29 +1,31 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private int _spawnerNumber;
-    [SerializeField] private Enemy _enemy;
-    [SerializeField] private Transform _target;
-    [SerializeField] private SpawnerScreamer _spawnerScreamer;
+    [SerializeField] private float _delay = 2f;
+    [SerializeField] private List<SpawnPoint> _spawnPoints;
+    private Coroutine _coroutine;
 
-    private void OnEnable()
+    private void Start()
     {
-        _spawnerScreamer.Spawn += SpawnEnemy;
+        _coroutine = StartCoroutine(nameof(SpawnEnemy), _delay);
     }
 
-    private void OnDisable()
+    private IEnumerator SpawnEnemy(float delay)
     {
-        _spawnerScreamer.Spawn -= SpawnEnemy;
-    }
+        var wait = new WaitForSeconds(delay);
+        bool isWork = true;
 
-    private void SpawnEnemy(int spawnerNumber)
-    {
-        if (spawnerNumber == _spawnerNumber)
+        while (isWork)
         {
-            Enemy enemy = Instantiate(_enemy, transform.position, transform.rotation);
-            Observer follover = enemy.GetComponent<Observer>();
-            follover._target = _target;
+            int pointNumber = Random.Range(0, _spawnPoints.Count);
+            _spawnPoints[pointNumber].Spawn();
+
+            yield return wait;
         }
+
+        yield return null;
     }
 }

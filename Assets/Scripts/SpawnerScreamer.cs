@@ -8,14 +8,14 @@ public class SpawnerScreamer : MonoBehaviour
 
     public event Action<int> Spawn;
 
-    void Start()
+    private void Start()
     {
         InvokeRepeating(nameof(SpawnScream), 0f, _delay);
     }
 
     private void SpawnScream()
     {
-        int spawnerNumber = UnityEngine.Random.Range(1, _spawnersCount+1);
+        int spawnerNumber = UnityEngine.Random.Range(1, _spawnersCount + 1);
         Spawn(spawnerNumber);
     }
 }
